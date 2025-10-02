@@ -4,15 +4,21 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Chandrashekhar Koralli – Portfolio</title>
-  <script defer src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script defer src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <meta name="description" content="Chandrashekhar Koralli – Lead Business Analyst, R&D/Regulatory Compliance"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    .chip { padding: 0.25rem 0.75rem; border-radius: 9999px; border: 1px solid rgb(228 228 231); font-size: 0.875rem; line-height: 1.5rem; margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-flex; align-items: center; box-shadow: 0 1px 1px rgba(0,0,0,0.03); }
+    .section { max-width: 64rem; margin: 0 auto; padding: 3.5rem 2.5rem; }
+    .card { border-radius: 1rem; border: 1px solid rgb(228 228 231); box-shadow: 0 1px 2px rgba(0,0,0,0.04); background: white; }
   </style>
 </head>
 <body class="bg-gradient-to-b from-white to-zinc-50 text-zinc-900">
+  <!-- Header -->
   <header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b">
     <div class="max-w-5xl mx-auto flex items-center justify-between px-6 md:px-10 h-16">
       <a href="#about" class="text-lg font-semibold">Chandrashekhar Koralli</a>
@@ -28,171 +34,151 @@
     </div>
   </header>
 
-  <main id="root" class="max-w-5xl mx-auto px-6 md:px-10 py-14"></main>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Hi, I’m Chandrashekhar 👋</h2>
+    <div class="grid md:grid-cols-3 gap-6 md:gap-10 items-start">
+      <div class="md:col-span-2">
+        <p class="text-lg leading-8">
+          IT professional with 8+ years across e‑commerce, ad tech, and retail. I partner with business & engineering across the SDLC to translate complex problems into clear requirements, robust data flows, and measurable outcomes.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a href="./resume.pdf" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-zinc-900 text-white">Download Résumé</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg border">LinkedIn</a>
+          <a href="https://github.com/" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg border">GitHub</a>
+        </div>
+        <div class="mt-6 text-sm text-zinc-600 flex flex-wrap items-center gap-4">
+          <span class="inline-flex items-center gap-2"><span>📍</span>New York Metropolitan Area, USA</span>
+          <span class="inline-flex items-center gap-2"><span>📞</span>424-371-3193</span>
+          <a class="inline-flex items-center gap-2 underline" href="mailto:ckoralli27@gmail.com"><span>✉️</span>ckoralli27@gmail.com</a>
+        </div>
+      </div>
+      <div class="md:col-span-1 p-5 rounded-2xl border shadow-sm bg-white">
+        <h3 class="text-base font-semibold mb-3">What I bring</h3>
+        <ul class="space-y-3 text-sm list-disc pl-5">
+          <li>End‑to‑end SDLC coverage: discovery → delivery → UAT → adoption.</li>
+          <li>Strong data chops: mapping, PL/SQL, ETL validation, KPI instrumentation.</li>
+          <li>Outcome focus: KPIs, risk/impact analysis, change management.</li>
+          <li>Tooling: Jira/Confluence, Tableau, Python automation, REST/SOAP.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <script>
-    const e = React.createElement;
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Experience</h2>
+    <div class="grid gap-6">
+      <div class="card p-5">
+        <div class="text-lg font-semibold mb-1">Lead Business Analyst – R&D/Regulatory Compliance</div>
+        <div class="text-sm text-zinc-600 mb-3">Estée Lauder Companies • Nov 2022 – Present</div>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Drove end‑to‑end requirements (functional/non‑functional), prototypes, wireframes, and FRDs across regulatory initiatives.</li>
+          <li>Introduced Python automation to accelerate data processing for Tableau KPIs (~20× faster) and published mobile‑ready dashboards.</li>
+          <li>Led data mapping and integrity checks across systems; partnered with devs/DBAs to resolve workflow and mapping defects.</li>
+          <li>Orchestrated UAT (plans, test cases, RTM); coordinated pre/post‑deploy regression, smoke, and SIT support.</li>
+        </ul>
+        <div class="mt-3">
+          <span class="chip">Jira</span><span class="chip">SQL</span><span class="chip">PL/SQL</span><span class="chip">Tableau</span><span class="chip">Python</span><span class="chip">ETL</span><span class="chip">UAT</span>
+        </div>
+      </div>
 
-    function Chip({children}) {
-      return e('span', {className:'inline-flex items-center rounded-2xl border px-3 py-1 text-sm leading-6 mr-2 mb-2 shadow-sm'}, children);
-    }
+      <div class="card p-5">
+        <div class="text-lg font-semibold mb-1">Business Systems Analyst – C2M/Regulatory</div>
+        <div class="text-sm text-zinc-600 mb-3">Randstad (Client: Estée Lauder) • Mar 2018 – Nov 2022</div>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Gathered & documented requirements on Veeva platforms; ran data mapping/validation and supported ETL quality gates.</li>
+          <li>Built BI dashboards and lightweight data pipelines for regulatory reporting and performance tracking.</li>
+          <li>Facilitated GAP analysis and UX artifacts (wireframes, prototypes) for new features and enhancements.</li>
+        </ul>
+        <div class="mt-3">
+          <span class="chip">Veeva</span><span class="chip">SQL</span><span class="chip">ETL</span><span class="chip">BI</span>
+        </div>
+      </div>
 
-    function Section({id, title, children}) {
-      return e('section', {id, className:'py-14'}, [
-        e('h2', {key:'h', className:'text-2xl md:text-3xl font-semibold tracking-tight mb-6'}, title),
-        children
-      ]);
-    }
+      <div class="card p-5">
+        <div class="text-lg font-semibold mb-1">Senior Business Systems Analyst</div>
+        <div class="text-sm text-zinc-600 mb-3">Justdial (Mumbai, India) • Jun 2010 – Dec 2015</div>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Led change‑management to enhance product workflow, contributing to ~33% growth in relevant product development.</li>
+          <li>Transitioned PPC project across providers/tech; launched across 11 locations, managing cross‑functional delivery.</li>
+          <li>Built KPIs dashboards, performed impact analysis, and delivered data modeling/migrations with Erwin.</li>
+        </ul>
+        <div class="mt-3">
+          <span class="chip">Google Analytics</span><span class="chip">Erwin</span><span class="chip">PPC</span><span class="chip">Change Mgmt</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    const profile = {
-      name: 'Chandrashekhar Koralli',
-      title: 'Lead Business Analyst – R&D / Regulatory Compliance',
-      location: 'New York Metropolitan Area, USA',
-      phone: '424-371-3193',
-      email: 'ckoralli27@gmail.com',
-      links: {
-        linkedin: 'https://www.linkedin.com/',
-        github: 'https://github.com/',
-        resume: './resume.pdf'
-      },
-      summary: 'IT professional with 8+ years across e‑commerce, ad tech, and retail. I partner with business & engineering across the SDLC to translate complex problems into clear requirements, robust data flows, and measurable outcomes.',
-      skillsPrimary: ['Business Analysis','Requirements Elicitation','Process Mapping (AS‑IS/TO‑BE)','GxP/Regulatory','UAT & RTM','Jira/Confluence'],
-      skillsTech: ['SQL (Oracle/MySQL)','PL/SQL','ETL/Data Mapping','APIs (REST/SOAP)','Python (automation)','Tableau/BI']
-    };
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Selected Projects</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card p-5">
+        <div class="text-lg font-semibold mb-2">ELC Materials Science KPIs</div>
+        <p class="mb-3 text-zinc-700">Tableau dashboards for regulatory KPIs with Python‑automated data prep (20× throughput). Mobile‑ready rollout to business users.</p>
+        <div class="mb-4"><span class="chip">Python</span><span class="chip">Tableau</span><span class="chip">SQL</span></div>
+        <a href="#" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-sm underline">View</a>
+      </div>
+      <div class="card p-5">
+        <div class="text-lg font-semibold mb-2">Regulatory Data Integration</div>
+        <p class="mb-3 text-zinc-700">Source‑to‑target mapping and ETL validation across Veeva platforms; created RTM and defect‑tracking workflows in Jira.</p>
+        <div class="mb-4"><span class="chip">Veeva</span><span class="chip">ETL</span><span class="chip">Jira</span></div>
+        <a href="#" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-sm underline">View</a>
+      </div>
+    </div>
+  </section>
 
-    const experiences = [
-      {
-        company: 'Estée Lauder Companies',
-        role: 'Lead Business Analyst – R&D/Regulatory Compliance',
-        period: 'Nov 2022 – Present',
-        bullets: [
-          'Drove end‑to‑end requirements (functional/non‑functional), prototypes, wireframes, and FRDs across regulatory initiatives.',
-          'Introduced Python automation to accelerate data processing for Tableau KPIs (~20× faster) and published mobile‑ready dashboards.',
-          'Led data mapping and integrity checks across systems; partnered with devs/DBAs to resolve workflow and mapping defects.',
-          'Orchestrated UAT (plans, test cases, RTM); coordinated pre/post‑deploy regression, smoke, and SIT support.'
-        ],
-        tags: ['Jira','SQL','PL/SQL','Tableau','Python','ETL','UAT']
-      },
-      {
-        company: 'Randstad (Client: Estée Lauder)',
-        role: 'Business Systems Analyst – C2M/Regulatory',
-        period: 'Mar 2018 – Nov 2022',
-        bullets: [
-          'Gathered & documented requirements on Veeva platforms; ran data mapping/validation and supported ETL quality gates.',
-          'Built BI dashboards and lightweight data pipelines for regulatory reporting and performance tracking.',
-          'Facilitated GAP analysis and UX artifacts (wireframes, prototypes) for new features and enhancements.'
-        ],
-        tags: ['Veeva','SQL','ETL','BI']
-      },
-      {
-        company: 'Justdial (Mumbai, India)',
-        role: 'Senior Business Systems Analyst',
-        period: 'Jun 2010 – Dec 2015',
-        bullets: [
-          'Led change‑management to enhance product workflow, contributing to ~33% growth in relevant product development.',
-          'Transitioned PPC project across providers/tech; launched across 11 locations, managing cross‑functional delivery.',
-          'Built KPIs dashboards, performed impact analysis, and delivered data modeling/migrations with Erwin.'
-        ],
-        tags: ['Google Analytics','Erwin','PPC','Change Mgmt']
-      }
-    ];
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Skills</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card p-5">
+        <div class="text-lg font-semibold mb-2">Core</div>
+        <div class="flex flex-wrap">
+          <span class="chip">Business Analysis</span><span class="chip">Requirements Elicitation</span><span class="chip">Process Mapping (AS‑IS/TO‑BE)</span><span class="chip">GxP/Regulatory</span><span class="chip">UAT & RTM</span><span class="chip">Jira/Confluence</span>
+        </div>
+      </div>
+      <div class="card p-5">
+        <div class="text-lg font-semibold mb-2">Technical</div>
+        <div class="flex flex-wrap">
+          <span class="chip">SQL (Oracle/MySQL)</span><span class="chip">PL/SQL</span><span class="chip">ETL/Data Mapping</span><span class="chip">APIs (REST/SOAP)</span><span class="chip">Python (automation)</span><span class="chip">Tableau/BI</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    const projects = [
-      { name: 'ELC Materials Science KPIs',
-        description: 'Tableau dashboards for regulatory KPIs with Python‑automated data prep (20× throughput). Mobile‑ready rollout to business users.',
-        link: '#', stack: ['Python','Tableau','SQL'] },
-      { name: 'Regulatory Data Integration',
-        description: 'Source‑to‑target mapping and ETL validation across Veeva platforms; created RTM and defect‑tracking workflows in Jira.',
-        link: '#', stack: ['Veeva','ETL','Jira'] }
-    ];
+  <!-- EDUCATION -->
+  <section id="education" class="section">
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Education</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card p-5">
+        <div class="text-lg font-semibold mb-2">Campbellsville University</div>
+        <p class="text-zinc-700">M.S., Information Technology Management</p>
+      </div>
+      <div class="card p-5">
+        <div class="text-lg font-semibold mb-2">UCLA</div>
+        <p class="text-zinc-700">Certificate, Social Media & Web Analytics</p>
+      </div>
+    </div>
+  </section>
 
-    function App() {
-      return e('div', null,
-        e(Section, {id:'about', title:`Hi, I’m ${profile.name} 👋`},
-          e('div', {className:'grid md:grid-cols-3 gap-6 md:gap-10 items-start'}, [
-            e('div', {key:'col1', className:'md:col-span-2'}, [
-              e('p', {className:'text-lg leading-8'}, profile.summary),
-              e('div', {className:'mt-6 flex flex-wrap items-center gap-3'}, [
-                e('a', {href: profile.links.resume, target:'_blank', rel:'noreferrer', className:'px-4 py-2 rounded-lg bg-zinc-900 text-white'}, 'Download Résumé'),
-                e('a', {href: profile.links.linkedin, target:'_blank', rel:'noreferrer', className:'px-4 py-2 rounded-lg border'}, 'LinkedIn'),
-                e('a', {href: profile.links.github, target:'_blank', rel:'noreferrer', className:'px-4 py-2 rounded-lg border'}, 'GitHub')
-              ]),
-              e('div', {className:'mt-6 text-sm text-zinc-600 flex flex-wrap items-center gap-4'}, [
-                e('span', {className:'inline-flex items-center gap-2'}, [e('i', {className:'lucide lucide-map-pin'}), profile.location]),
-                e('span', {className:'inline-flex items-center gap-2'}, [e('i', {className:'lucide lucide-phone'}), profile.phone]),
-                e('a', {className:'inline-flex items-center gap-2 underline', href:`mailto:${profile.email}`}, [e('i', {className:'lucide lucide-mail'}), profile.email])
-              ])
-            ]),
-            e('div', {key:'col2', className:'md:col-span-1 p-5 rounded-2xl border shadow-sm bg-white'}, [
-              e('h3', {className:'text-base font-semibold mb-3'}, 'What I bring'),
-              e('ul', {className:'space-y-3 text-sm list-disc pl-5'}, [
-                e('li', null, 'End‑to‑end SDLC coverage: discovery → delivery → UAT → adoption.'),
-                e('li', null, 'Strong data chops: mapping, PL/SQL, ETL validation, KPI instrumentation.'),
-                e('li', null, 'Outcome focus: KPIs, risk/impact analysis, change management.'),
-                e('li', null, 'Tooling: Jira/Confluence, Tableau, Python automation, REST/SOAP.')
-              ])
-            ])
-          ])
-        ),
-        e(Section, {id:'experience', title:'Experience'},
-          e('div', {className:'grid gap-6'},
-            experiences.map((exp, idx) => e('div', {key:idx, className:'rounded-2xl border shadow-sm p-5 bg-white'}, [
-              e('div', {className:'text-lg font-semibold mb-1'}, exp.role),
-              e('div', {className:'text-sm text-zinc-600 mb-3'}, `${exp.company} • ${exp.period}`),
-              e('ul', {className:'list-disc pl-5 space-y-2'}, exp.bullets.map((b,i)=>e('li',{key:i}, b))),
-              e('div', {className:'mt-3'}, exp.tags.map((t,i)=>e(Chip,{key:i}, t)))
-            ]))
-          )
-        ),
-        e(Section, {id:'projects', title:'Selected Projects'},
-          e('div', {className:'grid md:grid-cols-2 gap-6'},
-            projects.map((p,i)=> e('div',{key:i, className:'rounded-2xl border shadow-sm p-5 bg-white'}, [
-              e('div',{className:'text-lg font-semibold mb-2'}, p.name),
-              e('p',{className:'mb-3 text-zinc-700'}, p.description),
-              e('div',{className:'mb-4'}, p.stack.map((s,j)=>e(Chip,{key:j}, s))),
-              e('a',{href:p.link, target:'_blank', rel:'noreferrer', className:'inline-flex items-center gap-2 text-sm underline'}, ['View'])
-            ]))
-          )
-        ),
-        e(Section, {id:'skills', title:'Skills'},
-          e('div', {className:'grid md:grid-cols-2 gap-6'}, [
-            e('div', {className:'rounded-2xl border shadow-sm p-5 bg-white'}, [
-              e('div', {className:'text-lg font-semibold mb-2'}, 'Core'),
-              e('div', {className:'flex flex-wrap'}, profile.skillsPrimary.map((s,i)=>e(Chip,{key:i}, s)))
-            ]),
-            e('div', {className:'rounded-2xl border shadow-sm p-5 bg-white'}, [
-              e('div', {className:'text-lg font-semibold mb-2'}, 'Technical'),
-              e('div', {className:'flex flex-wrap'}, profile.skillsTech.map((s,i)=>e(Chip,{key:i}, s)))
-            ])
-          ])
-        ),
-        e(Section, {id:'education', title:'Education'},
-          e('div', {className:'grid md:grid-cols-2 gap-6'}, [
-            e('div', {className:'rounded-2xl border shadow-sm p-5 bg-white'}, [
-              e('div', {className:'text-lg font-semibold mb-2'}, 'Campbellsville University'),
-              e('p', {className:'text-zinc-700'}, 'M.S., Information Technology Management')
-            ]),
-            e('div', {className:'rounded-2xl border shadow-sm p-5 bg-white'}, [
-              e('div', {className:'text-lg font-semibold mb-2'}, 'UCLA'),
-              e('p', {className:'text-zinc-700'}, 'Certificate, Social Media & Web Analytics')
-            ])
-          ])
-        ),
-        e(Section, {id:'contact', title:'Let’s connect'},
-          e('div', {className:'flex flex-col md:flex-row items-start md:items-center gap-4'}, [
-            e('a', {href:`mailto:${profile.email}`, className:'px-4 py-2 rounded-lg bg-zinc-900 text-white'}, 'Email me'),
-            e('a', {href:`tel:${profile.phone}`, className:'px-4 py-2 rounded-lg border'}, 'Call'),
-            e('a', {href:profile.links.linkedin, target:'_blank', rel:'noreferrer', className:'px-4 py-2 rounded-lg underline'}, 'LinkedIn')
-          ])
-        )
-      );
-    }
-
-    ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
-  </script>
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Let’s connect</h2>
+    <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
+      <a href="mailto:ckoralli27@gmail.com" class="px-4 py-2 rounded-lg bg-zinc-900 text-white">Email me</a>
+      <a href="tel:4243713193" class="px-4 py-2 rounded-lg border">Call</a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg underline">LinkedIn</a>
+    </div>
+    <p class="mt-6 text-sm text-zinc-600 max-w-3xl">
+      Prefer a one‑pager? Click “Download Résumé” above. Want role‑specific tailoring (e.g., FDA/GxP focus or data‑heavy BA roles)? I can adapt this for each application.
+    </p>
+  </section>
 
   <footer class="py-10 text-center text-sm text-zinc-500">
-    <div>Built with React • Tailwind (CDN)</div>
+    <div>Built with HTML • Tailwind (CDN)</div>
     <div class="mt-2">© <span id="year"></span> Chandrashekhar Koralli</div>
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
