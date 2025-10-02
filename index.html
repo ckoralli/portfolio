@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Chandrashekhar Koralli – Portfolio</title>
+  <script defer src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script defer src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-white to-zinc-50 text-zinc-900">
+  <header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b">
+    <div class="max-w-5xl mx-auto flex items-center justify-between px-6 md:px-10 h-16">
+      <a href="#about" class="text-lg font-semibold">Chandrashekhar Koralli</a>
+      <nav class="hidden md:flex gap-2 text-sm">
+        <a href="#about" class="px-3 py-2 rounded-lg hover:bg-zinc-100">About</a>
+        <a href="#experience" class="px-3 py-2 rounded-lg hover:bg-zinc-100">Experience</a>
+        <a href="#projects" class="px-3 py-2 rounded-lg hover:bg-zinc-100">Projects</a>
+        <a href="#skills" class="px-3 py-2 rounded-lg hover:bg-zinc-100">Skills</a>
+        <a href="#education" class="px-3 py-2 rounded-lg hover:bg-zinc-100">Education</a>
+        <a href="#contact" class="px-3 py-2 rounded-lg hover:bg-zinc-100">Contact</a>
+      </nav>
+      <a href="#contact" class="md:hidden px-3 py-2 rounded-lg border">Contact</a>
+    </div>
+  </header>
+
+  <main id="root" class="max-w-5xl mx-auto px-6 md:px-10 py-14"></main>
+
+  <script>
+    const e = React.createElement;
+
+    function Chip({children}) {
+      return e('span', {className:'inline-flex items-center rounded-2xl border px-3 py-1 text-sm leading-6 mr-2 mb-2 shadow-sm'}, children);
+    }
+
+    function Section({id, title, children}) {
+      return e('section', {id, className:'py-14'}, [
+        e('h2', {key:'h', className:'text-2xl md:text-3xl font-semibold tracking-tight mb-6'}, title),
+        children
+      ]);
+    }
+
+    const profile = {
+      name: 'Chandrashekhar Koralli',
+      title: 'Lead Business Analyst – R&D / Regulatory Compliance',
+      location: 'New York Metropolitan Area, USA',
+      phone: '424-371-3193',
+      email: 'ckoralli27@gmail.com',
+      links: {
+        linkedin: 'https://www.linkedin.com/',
+        github: 'https://github.com/',
+        resume: './resume.pdf'
+      },
+      summary: 'IT professional with 8+ years across e‑commerce, ad tech, and retail. I partner with business & engineering across the SDLC to translate complex problems into clear requirements, robust data flows, and measurable outcomes.',
+      skillsPrimary: ['Business Analysis','Requirements Elicitation','Process Mapping (AS‑IS/TO‑BE)','GxP/Regulatory','UAT & RTM','Jira/Confluence'],
+      skillsTech: ['SQL (Oracle/MySQL)','PL/SQL','ETL/Data Mapping','APIs (REST/SOAP)','Python (automation)','Tableau/BI']
+    };
+
+    const experiences = [
+      {
+        company: 'Estée Lauder Companies',
+        role: 'Lead Business Analyst – R&D/Regulatory Compliance',
+        period: 'Nov 2022 – Present',
+        bullets: [
+          'Drove end‑to‑end requirements (functional/non‑functional), prototypes, wireframes, and FRDs across regulatory initiatives.',
+          'Introduced Python automation to accelerate data processing for Tableau KPIs (~20× faster) and published mobile‑ready dashboards.',
+          'Led data mapping and integrity checks across systems; partnered with devs/DBAs to resolve workflow and mapping defects.',
+          'Orchestrated UAT (plans, test cases, RTM); coordinated pre/post‑deploy regression, smoke, and SIT support.'
+        ],
+        tags: ['Jira','SQL','PL/SQL','Tableau','Python','ETL','UAT']
+      },
+      {
+        company: 'Randstad (Client: Estée Lauder)',
+        role: 'Business Systems Analyst – C2M/Regulatory',
+        period: 'Mar 2018 – Nov 2022',
+        bullets: [
+          'Gathered & documented requirements on Veeva platforms; ran data mapping/validation and supported ETL quality gates.',
+          'Built BI dashboards and lightweight data pipelines for regulatory reporting and performance tracking.',
+          'Facilitated GAP analysis and UX artifacts (wireframes, prototypes) for new features and enhancements.'
+        ],
+        tags: ['Veeva','SQL','ETL','BI']
+      },
+      {
+        company: 'Justdial (Mumbai, India)',
+        role: 'Senior Business Systems Analyst',
+        period: 'Jun 2010 – Dec 2015',
+        bullets: [
+          'Led change‑management to enhance product workflow, contributing to ~33% growth in relevant product development.',
+          'Transitioned PPC project across providers/tech; launched across 11 locations, managing cross‑functional delivery.',
+          'Built KPIs dashboards, performed impact analysis, and delivered data modeling/migrations with Erwin.'
+        ],
+        tags: ['Google Analytics','Erwin','PPC','Change Mgmt']
+      }
+    ];
+
+    const projects = [
+      { name: 'ELC Materials Science KPIs',
+        description: 'Tableau dashboards for regulatory KPIs with Python‑automated data prep (20× throughput). Mobile‑ready rollout to business users.',
+        link: '#', stack: ['Python','Tableau','SQL'] },
+      { name: 'Regulatory Data Integration',
+        description: 'Source‑to‑target mapping and ETL validation across Veeva platforms; created RTM and defect‑tracking workflows in Jira.',
+        link: '#', stack: ['Veeva','ETL','Jira'] }
+    ];
+
+    function App() {
+      return e('div', null,
+        e(Section, {id:'about', title:`Hi, I’m ${profile.name} 👋`},
+          e('div', {className:'grid md:grid-cols-3 gap-6 md:gap-10 items-start'}, [
+            e('div', {key:'col1', className:'md:col-span-2'}, [
+              e('p', {className:'text-lg leading-8'}, profile.summary),
+              e('div', {className:'mt-6 flex flex-wrap items-center gap-3'}, [
+                e('a', {href: profile.links.resume, target:'_blank', rel:'noreferrer', className:'px-4 py-2 rounded-lg bg-zinc-900 text-white'}, 'Download Résumé'),
+                e('a', {href: profile.links.linkedin, target:'_blank', rel:'noreferrer', className:'px-4 py-2 rounded-lg border'}, 'LinkedIn'),
+                e('a', {href: profile.links.github, target:'_blank', rel:'noreferrer', className:'px-4 py-2 rounded-lg border'}, 'GitHub')
+              ]),
+              e('div', {className:'mt-6 text-sm text-zinc-600 flex flex-wrap items-center gap-4'}, [
+                e('span', {className:'inline-flex items-center gap-2'}, [e('i', {className:'lucide lucide-map-pin'}), profile.location]),
+                e('span', {className:'inline-flex items-center gap-2'}, [e('i', {className:'lucide lucide-phone'}), profile.phone]),
+                e('a', {className:'inline-flex items-center gap-2 underline', href:`mailto:${profile.email}`}, [e('i', {className:'lucide lucide-mail'}), profile.email])
+              ])
+            ]),
+            e('div', {key:'col2', className:'md:col-span-1 p-5 rounded-2xl border shadow-sm bg-white'}, [
+              e('h3', {className:'text-base font-semibold mb-3'}, 'What I bring'),
+              e('ul', {className:'space-y-3 text-sm list-disc pl-5'}, [
+                e('li', null, 'End‑to‑end SDLC coverage: discovery → delivery → UAT → adoption.'),
+                e('li', null, 'Strong data chops: mapping, PL/SQL, ETL validation, KPI instrumentation.'),
+                e('li', null, 'Outcome focus: KPIs, risk/impact analysis, change management.'),
+                e('li', null, 'Tooling: Jira/Confluence, Tableau, Python automation, REST/SOAP.')
+              ])
+            ])
+          ])
+        ),
+        e(Section, {id:'experience', title:'Experience'},
+          e('div', {className:'grid gap-6'},
+            experiences.map((exp, idx) => e('div', {key:idx, className:'rounded-2xl border shadow-sm p-5 bg-white'}, [
+              e('div', {className:'text-lg font-semibold mb-1'}, exp.role),
+              e('div', {className:'text-sm text-zinc-600 mb-3'}, `${exp.company} • ${exp.period}`),
+              e('ul', {className:'list-disc pl-5 space-y-2'}, exp.bullets.map((b,i)=>e('li',{key:i}, b))),
+              e('div', {className:'mt-3'}, exp.tags.map((t,i)=>e(Chip,{key:i}, t)))
+            ]))
+          )
+        ),
+        e(Section, {id:'projects', title:'Selected Projects'},
+          e('div', {className:'grid md:grid-cols-2 gap-6'},
+            projects.map((p,i)=> e('div',{key:i, className:'rounded-2xl border shadow-sm p-5 bg-white'}, [
+              e('div',{className:'text-lg font-semibold mb-2'}, p.name),
+              e('p',{className:'mb-3 text-zinc-700'}, p.description),
+              e('div',{className:'mb-4'}, p.stack.map((s,j)=>e(Chip,{key:j}, s))),
+              e('a',{href:p.link, target:'_blank', rel:'noreferrer', className:'inline-flex items-center gap-2 text-sm underline'}, ['View'])
+            ]))
+          )
+        ),
+        e(Section, {id:'skills', title:'Skills'},
+          e('div', {className:'grid md:grid-cols-2 gap-6'}, [
+            e('div', {className:'rounded-2xl border shadow-sm p-5 bg-white'}, [
+              e('div', {className:'text-lg font-semibold mb-2'}, 'Core'),
+              e('div', {className:'flex flex-wrap'}, profile.skillsPrimary.map((s,i)=>e(Chip,{key:i}, s)))
+            ]),
+            e('div', {className:'rounded-2xl border shadow-sm p-5 bg-white'}, [
+              e('div', {className:'text-lg font-semibold mb-2'}, 'Technical'),
+              e('div', {className:'flex flex-wrap'}, profile.skillsTech.map((s,i)=>e(Chip,{key:i}, s)))
+            ])
+          ])
+        ),
+        e(Section, {id:'education', title:'Education'},
+          e('div', {className:'grid md:grid-cols-2 gap-6'}, [
+            e('div', {className:'rounded-2xl border shadow-sm p-5 bg-white'}, [
+              e('div', {className:'text-lg font-semibold mb-2'}, 'Campbellsville University'),
+              e('p', {className:'text-zinc-700'}, 'M.S., Information Technology Management')
+            ]),
+            e('div', {className:'rounded-2xl border shadow-sm p-5 bg-white'}, [
+              e('div', {className:'text-lg font-semibold mb-2'}, 'UCLA'),
+              e('p', {className:'text-zinc-700'}, 'Certificate, Social Media & Web Analytics')
+            ])
+          ])
+        ),
+        e(Section, {id:'contact', title:'Let’s connect'},
+          e('div', {className:'flex flex-col md:flex-row items-start md:items-center gap-4'}, [
+            e('a', {href:`mailto:${profile.email}`, className:'px-4 py-2 rounded-lg bg-zinc-900 text-white'}, 'Email me'),
+            e('a', {href:`tel:${profile.phone}`, className:'px-4 py-2 rounded-lg border'}, 'Call'),
+            e('a', {href:profile.links.linkedin, target:'_blank', rel:'noreferrer', className:'px-4 py-2 rounded-lg underline'}, 'LinkedIn')
+          ])
+        )
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+  </script>
+
+  <footer class="py-10 text-center text-sm text-zinc-500">
+    <div>Built with React • Tailwind (CDN)</div>
+    <div class="mt-2">© <span id="year"></span> Chandrashekhar Koralli</div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
